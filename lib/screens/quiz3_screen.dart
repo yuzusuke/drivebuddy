@@ -305,8 +305,8 @@ class Summary extends StatelessWidget {
                     color: Colors.lightBlue,
                     shape: RoundedRectangleBorder(
                       borderRadius: new BorderRadius.circular(10.0),),
-                    onPressed: () {
-                      Navigator.popUntil(context, ModalRoute.withName("/a"));
+                    onPressed: (){
+                      Navigator.of(context).pushNamed("/quizmenu");
                     },
                     child: new Text("一覧に戻る",
                       style: new TextStyle(

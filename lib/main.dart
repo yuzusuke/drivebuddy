@@ -1,4 +1,5 @@
 import 'package:drivebuddy/screens/first_view.dart';
+import 'package:drivebuddy/screens/quiz_menu_screen.dart';
 import 'package:drivebuddy/screens/sign_up_view.dart';
 import 'package:drivebuddy/screens/home_screen.dart';
 import 'package:drivebuddy/screens/provider_widget.dart';
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
           '/signUp': (BuildContext context) => SignUpView(authFormType: AuthFormType.signUp),
           '/signIn': (BuildContext context) => SignUpView(authFormType: AuthFormType.signIn),
           '/home': (BuildContext context) => HomeController(),
+          '/quizmenu': (BuildContext context) => DriveQuizMenu(),
         },
       ),
     );
