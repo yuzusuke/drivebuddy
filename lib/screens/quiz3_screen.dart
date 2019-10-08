@@ -2,29 +2,30 @@ import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
 
-class DriveQuiz2{
+
+class DriveQuiz3{
   var images = [
-    "us-road", "redsignal", "911", "homeless","thanks",
+    "stealing", "panic", "beer", "parking","key",
   ];
 
   var questions = [
-    "アメリカの道路はどちら側を走行する？",
-    "右折したいが赤信号だ",
-    "後ろから緊急車両が来た",
-    "停止中に横に物乞いしている人がこちらを見ている。",
-    "走行中、道を譲ってくれたからお礼のハザードは？",
+    "右折のウインカーを点灯したい。バーと上下どっち？",
+    "ハザードはなんの時に点灯すべき？",
+    "お酒を車内から見える位置に置いてた警察に見つかるとどうなる？",
+    "駐車場のラインが日本と違い斜めに引かれている。駐車の仕方は？",
+    "広い駐車場に止めてどこに車があるかわからなくなった。どうする？",
   ];
 
   var choices = [
-    ["右", "左", "真ん中", "どちらでも"],
-    ["一時停止して右折", "青まで待つ", "そのまま右折", "徐行しながら右折"],
-    ["左に寄る", "右に寄る", "その場で停止", "そのまま走行"],
-    ["窓を開けて何かあげる", "挨拶する", "目を合わせない", "警察を呼ぶ"],
-    ["どちらでもいい","それはダメ","もちろん点灯","３回点灯"],
+    ["左上", "右上", "左下", "右下"],
+    ["道を譲る時", "徐行", "Thanks", "緊急事態"],
+    ["何もない", "横取りされる", "違反切符", "注意される"],
+    ["バックで駐車", "頭から駐車", "どちらでも", "縦列駐車"],
+    ["自力で探す","人に聞く","鍵ボタンを二度押す","助けを呼ぶ"],
   ];
 
   var correctAnswers = [
-    "右", "一時停止して右折", "右に寄る", "目を合わせない"," それはダメ",
+    "左上", "緊急事態", "違反切符", "頭から駐車"," 鍵ボタンを二度押す",
   ];
 
 }
@@ -33,25 +34,25 @@ class DriveQuiz2{
 
 var finalScore= 0;
 var questionNumber = 0;
-var quiz = new DriveQuiz2();
+var quiz = new DriveQuiz3();
 
 
-class Quiz2 extends StatefulWidget{
+class Quiz3 extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
-    return new Quiz2State();
+    return new Quiz3State();
   }
 
 }
 
-class Quiz2State extends State<Quiz2>{
+class Quiz3State extends State<Quiz3>{
   @override
   Widget build(BuildContext context) {
     return new WillPopScope(
         onWillPop: ()async => false,
         child: Scaffold(
           appBar: new AppBar(
-            title: new Text("Quiz 2 走行編＜初級＞"),
+            title: new Text("Quiz 3 車輌編＜初級＞"),
             backgroundColor: Colors.indigoAccent,
           ),
 
@@ -68,6 +69,7 @@ class Quiz2State extends State<Quiz2>{
                   child: new Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
+
                       AutoSizeText("Question ${questionNumber + 1} of ${quiz.questions.length}",
                         style: new TextStyle(
                             fontSize: 20.0
@@ -90,7 +92,7 @@ class Quiz2State extends State<Quiz2>{
 
                 new Padding(padding: EdgeInsets.all(10.0)),
 
-                AutoSizeText(quiz.questions[questionNumber],
+                new Text(quiz.questions[questionNumber],
                   style: new TextStyle(
                     fontSize: 20.0,
                   ),),
@@ -258,14 +260,15 @@ class Quiz2State extends State<Quiz2>{
 
 }
 
-class Summary extends StatelessWidget{
+class Summary extends StatelessWidget {
   final int score;
-  Summary({Key key, @required this.score}) : super(key : key);
+
+  Summary({Key key, @required this.score}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return new WillPopScope(
-      onWillPop: ()async => false,
+      onWillPop: () async => false,
       child: Scaffold(
 
           body: new Container(
@@ -285,7 +288,7 @@ class Summary extends StatelessWidget{
                     color: Colors.red,
                     shape: RoundedRectangleBorder(
                       borderRadius: new BorderRadius.circular(10.0),),
-                    onPressed: (){
+                    onPressed: () {
                       questionNumber = 0;
                       finalScore = 0;
                       Navigator.pop(context);
@@ -302,7 +305,7 @@ class Summary extends StatelessWidget{
                     color: Colors.lightBlue,
                     shape: RoundedRectangleBorder(
                       borderRadius: new BorderRadius.circular(10.0),),
-                    onPressed: (){
+                    onPressed: () {
                       Navigator.popUntil(context, ModalRoute.withName("/a"));
                     },
                     child: new Text("一覧に戻る",
@@ -311,7 +314,7 @@ class Summary extends StatelessWidget{
                           color: Colors.white
                       ),))
 
-              ],// Column
+              ], // Column
             ),
           )
 

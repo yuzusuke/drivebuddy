@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:drivebuddy/screens/first_vew.dart';
 import 'quiz_menu_screen.dart';
 
 
@@ -21,6 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       appBar: AppBar(
         backgroundColor: Colors.indigoAccent,
         title: Text("DriveBuddy"),
@@ -53,10 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
-                  Expanded(
-                      flex: 1,
-                      child: _homeButton(_texts[0],
-                      )),
+                  Expanded(flex: 1, child: _homeButton(_texts[0])),
                   Expanded(flex: 1, child: _homeButton(_texts[1])),
                 ],
               ),

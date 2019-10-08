@@ -2,29 +2,30 @@ import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
 
-class DriveQuiz2{
+
+class DriveQuiz4{
   var images = [
-    "us-road", "redsignal", "911", "homeless","thanks",
+    "carlate", "freeway", "carpool", "freewayexit","express",
   ];
 
   var questions = [
-    "アメリカの道路はどちら側を走行する？",
-    "右折したいが赤信号だ",
-    "後ろから緊急車両が来た",
-    "停止中に横に物乞いしている人がこちらを見ている。",
-    "走行中、道を譲ってくれたからお礼のハザードは？",
+    "どうやら自分は走行が遅いらしい。",
+    "FreeWayでの追越車線はどちらにある？",
+    "FreeWayでこの標識の車線はどういう車が走れる？",
+    "FreeWayをおりたい場合、基本的に降り口は？",
+    "FreeWayでこの標識の車線はどういう意味？",
   ];
 
   var choices = [
-    ["右", "左", "真ん中", "どちらでも"],
-    ["一時停止して右折", "青まで待つ", "そのまま右折", "徐行しながら右折"],
-    ["左に寄る", "右に寄る", "その場で停止", "そのまま走行"],
-    ["窓を開けて何かあげる", "挨拶する", "目を合わせない", "警察を呼ぶ"],
-    ["どちらでもいい","それはダメ","もちろん点灯","３回点灯"],
+    ["そのまま走行", "左の車線に移動", "右の車線に移動", "速度を上げる"],
+    ["左側", "右側", "両サイド", "ない"],
+    ["高額納税車両", "妊婦", "２人以上乗車", "３０歳以上"],
+    ["左側", "右側", "左右同時にある", "左右交互にある"],
+    ["緊急車両用","有料道路用","乗用車専用","トラック専用"],
   ];
 
   var correctAnswers = [
-    "右", "一時停止して右折", "右に寄る", "目を合わせない"," それはダメ",
+    "右の車線に移動", "左側", "２人以上乗車", "右側"," 有料道路用",
   ];
 
 }
@@ -33,25 +34,25 @@ class DriveQuiz2{
 
 var finalScore= 0;
 var questionNumber = 0;
-var quiz = new DriveQuiz2();
+var quiz = new DriveQuiz4();
 
 
-class Quiz2 extends StatefulWidget{
+class Quiz4 extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
-    return new Quiz2State();
+    return new Quiz4State();
   }
 
 }
 
-class Quiz2State extends State<Quiz2>{
+class Quiz4State extends State<Quiz4>{
   @override
   Widget build(BuildContext context) {
     return new WillPopScope(
         onWillPop: ()async => false,
         child: Scaffold(
           appBar: new AppBar(
-            title: new Text("Quiz 2 走行編＜初級＞"),
+            title: new Text("Quiz 4 FreeWay編＜初級＞"),
             backgroundColor: Colors.indigoAccent,
           ),
 
@@ -68,6 +69,7 @@ class Quiz2State extends State<Quiz2>{
                   child: new Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
+
                       AutoSizeText("Question ${questionNumber + 1} of ${quiz.questions.length}",
                         style: new TextStyle(
                             fontSize: 20.0
@@ -258,14 +260,15 @@ class Quiz2State extends State<Quiz2>{
 
 }
 
-class Summary extends StatelessWidget{
+class Summary extends StatelessWidget {
   final int score;
-  Summary({Key key, @required this.score}) : super(key : key);
+
+  Summary({Key key, @required this.score}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return new WillPopScope(
-      onWillPop: ()async => false,
+      onWillPop: () async => false,
       child: Scaffold(
 
           body: new Container(
@@ -285,7 +288,7 @@ class Summary extends StatelessWidget{
                     color: Colors.red,
                     shape: RoundedRectangleBorder(
                       borderRadius: new BorderRadius.circular(10.0),),
-                    onPressed: (){
+                    onPressed: () {
                       questionNumber = 0;
                       finalScore = 0;
                       Navigator.pop(context);
@@ -302,7 +305,7 @@ class Summary extends StatelessWidget{
                     color: Colors.lightBlue,
                     shape: RoundedRectangleBorder(
                       borderRadius: new BorderRadius.circular(10.0),),
-                    onPressed: (){
+                    onPressed: () {
                       Navigator.popUntil(context, ModalRoute.withName("/a"));
                     },
                     child: new Text("一覧に戻る",
@@ -311,7 +314,7 @@ class Summary extends StatelessWidget{
                           color: Colors.white
                       ),))
 
-              ],// Column
+              ], // Column
             ),
           )
 

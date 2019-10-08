@@ -4,7 +4,7 @@ import 'package:drivebuddy/screens/custom_dialog.dart';
 
 
 class FirstView extends StatelessWidget {
-  final primaryColor = const Color(0xFF75A2EA);
+  final primaryColor = const Color(0xFF42A5F5);
 
 
   @override
@@ -14,12 +14,18 @@ class FirstView extends StatelessWidget {
 
     return Scaffold(
       body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("images/mainroad.jpg"),
+            fit: BoxFit.cover,
+          )
+        ),
         width: _width,
         height: _height,
-        color: primaryColor,
+//        color: primaryColor,
         child: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(10.0),
             child: Column(
               children: <Widget>[
                 SizedBox(
@@ -28,38 +34,38 @@ class FirstView extends StatelessWidget {
                 Text(
                   "DriveBuddy",
                   style: TextStyle(
-                      fontSize: 44,
+                      fontSize: 55,
                       color: Colors.white
                   ),
                 ),
                 SizedBox(
                   height: _height * 0.10,
                 ),
-                AutoSizeText(
-                  "I can help your Drive in US. Let's learn it!!",
-                  maxLines: 2,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      fontSize: 40,
-                      color: Colors.white
-                  ),
-                ),
+//                AutoSizeText(
+//                  "I can help your Drive in US. Let's learn it!!",
+//                  maxLines: 2,
+//                  textAlign: TextAlign.center,
+//                  style: TextStyle(
+//                      fontSize: 35,
+//                      color: Colors.white
+//                  ),
+//                ),
                 SizedBox(
-                  height: _height * 0.15,
+                  height: _height * 0.40,
                 ),
                 RaisedButton(
-                  color: Colors.white,
+                  color: Colors.green,
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
                   child: Padding(
-                    padding: const EdgeInsets.only(top:10.0, bottom: 10.0, left: 30.0, right: 30.0),
-                    child: Text("アカウント登録", style: TextStyle(color: primaryColor, fontSize: 28, fontWeight: FontWeight.w300),),
+                    padding: const EdgeInsets.only(top:10.0, bottom: 10.0, left: 20.0, right: 20.0),
+                    child: Text("アカウント登録", style: TextStyle(color: Colors.white, fontSize: 25, fontWeight: FontWeight.w400),),
                   ),
                   onPressed: (){
                     showDialog(
                         context: context,
                       builder: (BuildContext context) => CustomDialog(
-                        title: "アカウントを作りますか？",
-                        description: "アカウントを登録すると簡単にログイン出来てデータを保存できます。",
+                        title: "アカウントを登録しますか？",
+                        description: "簡単にログイン出来て今後データを保存できるようになります。",
                         primaryButtonText: "アカウント登録",
                         primaryButtonRoute: "/signUp",
                         secondaryButtonText: "あとで登録",
@@ -73,7 +79,9 @@ class FirstView extends StatelessWidget {
                 FlatButton(
                   child: Text("サインイン", style: TextStyle(color: Colors.white, fontSize: 25),
                   ),
-                  onPressed: (){},
+                  onPressed: (){
+                    Navigator.of(context).pushReplacementNamed('/signIn');
+                  },
                 ),
               ],
             ),

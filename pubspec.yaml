@@ -21,12 +21,16 @@ dependencies:
     sdk: flutter
 
   cloud_firestore: ^0.12.9
-  firebase_auth: ^0.14.0+5
+  firebase_auth: ^0.11.1+10
+
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
   auto_size_text: ^2.0.2
+
+
+
 
 dev_dependencies:
   flutter_test:
@@ -50,6 +54,30 @@ flutter:
     - images/speedlimit.jpg
     - images/yield.jpg
     - images/firstpic.jpg
+    - images/us-road.jpg
+    - images/redsignal.jpg
+    - images/911.jpg
+    - images/homeless.jpg
+    - images/thanks.jpg
+    - images/stealing.jpg
+    - images/panic.jpg
+    - images/beer.jpg
+    - images/parking.jpg
+    - images/key.jpg
+    - images/carlate.jpg
+    - images/freeway.jpg
+    - images/freewayexit.jpg
+    - images/carpool.jpg
+    - images/carpoollane.jpg
+    - images/express.jpg
+    - images/policecar.jpg
+    - images/police.jpg
+    - images/accident.jpg
+    - images/police15.jpg
+    - images/carsmoke.jpg
+    - images/mainroad.jpg
+    - images/mainroad1.jpg
+    - images/yosemite.jpg
 
   # To add assets to your application, add an assets section, like this:
   # assets:

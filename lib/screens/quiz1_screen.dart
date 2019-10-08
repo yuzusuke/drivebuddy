@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'quiz_menu_screen.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class DriveQuiz {
   var images = [
@@ -45,23 +46,6 @@ class Quiz1State extends State<Quiz1> {
             title: new Text("Quiz 1 標識編＜初級＞"),
             backgroundColor: Colors.indigoAccent,
           ),
-          bottomNavigationBar: BottomNavigationBar(
-            currentIndex: 0, // this will be set when a new tab is tapped
-            items: [
-              BottomNavigationBarItem(
-                icon: new Icon(Icons.home),
-                title: new Text('Home'),
-              ),
-              BottomNavigationBarItem(
-                icon: new Icon(Icons.library_books),
-                title: new Text('Quiz'),
-              ),
-              BottomNavigationBarItem(
-                icon: new Icon(Icons.settings),
-                title: new Text('Profile'),
-              ),
-            ],
-          ),
 
           body: new Container(
             margin: const EdgeInsets.all(10.0),
@@ -75,7 +59,7 @@ class Quiz1State extends State<Quiz1> {
                   child: new Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      new Text(
+                      AutoSizeText(
                         "Question ${questionNumber + 1} of ${quiz.questions.length}",
                         style: new TextStyle(fontSize: 20.0),
                       ),
@@ -94,7 +78,7 @@ class Quiz1State extends State<Quiz1> {
 
                 new Padding(padding: EdgeInsets.all(10.0)),
 
-                new Text(
+                AutoSizeText(
                   quiz.questions[questionNumber],
                   style: new TextStyle(
                     fontSize: 20.0,

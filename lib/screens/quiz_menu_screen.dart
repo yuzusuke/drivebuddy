@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
 import './quiz1_screen.dart';
 import './quiz2_screen.dart';
+import './quiz3_screen.dart';
+import './quiz4_screen.dart';
+import './quiz5_screen.dart';
+
+
+
+
+
 
 
 class DriveQuizMenu extends StatefulWidget {
@@ -12,25 +20,25 @@ class DriveQuizMenu extends StatefulWidget {
 class DriveQuizMenuState extends State<DriveQuizMenu> {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text("Drive Rule Quiz"),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Drive Rule Quiz"),
         backgroundColor: Colors.indigoAccent,
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 0, // this will be set when a new tab is tapped
         items: [
           BottomNavigationBarItem(
-            icon: new Icon(Icons.home),
-            title: new Text('Home'),
+            icon: Icon(Icons.home),
+            title: Text('Home'),
           ),
           BottomNavigationBarItem(
-            icon: new Icon(Icons.library_books),
-            title: new Text('Quiz'),
+            icon: Icon(Icons.library_books),
+            title: Text('Quiz'),
           ),
           BottomNavigationBarItem(
-            icon: new Icon(Icons.settings),
-            title: new Text('Profile'),
+            icon: Icon(Icons.settings),
+            title: Text('Profile'),
           ),
         ],
       ),
@@ -90,7 +98,7 @@ class DriveQuizMenuState extends State<DriveQuizMenu> {
                 side: BorderSide(color: Colors.indigo, width: 1.0),
               ),
               onPressed: () {
-                this.startQuiz2();
+                this.startQuiz3();
               },
               child: new Text("Quiz 3 車輌編＜初級＞",
                 style: new TextStyle(
@@ -109,7 +117,7 @@ class DriveQuizMenuState extends State<DriveQuizMenu> {
                 side: BorderSide(color: Colors.indigo, width: 1.0),
               ),
               onPressed: () {
-                this.startQuiz2();
+                this.startQuiz4();
               },
               child: new Text("Quiz 4 FreeWay編＜初級＞",
                 style: new TextStyle(
@@ -129,7 +137,7 @@ class DriveQuizMenuState extends State<DriveQuizMenu> {
                 side: BorderSide(color: Colors.indigo, width: 1.0),
               ),
               onPressed: () {
-                this.startQuiz2();
+                this.startQuiz5();
               },
               child: new Text("Quiz 5 トラブル編＜初級＞",
                 style: new TextStyle(
@@ -163,5 +171,25 @@ class DriveQuizMenuState extends State<DriveQuizMenu> {
     });
   }
 
+  void startQuiz3() {
+    setState(() {
+      Navigator.push(
+          context, new MaterialPageRoute(builder: (context) => new Quiz3()));
+    });
+  }
+
+  void startQuiz4() {
+    setState(() {
+      Navigator.push(
+          context, new MaterialPageRoute(builder: (context) => new Quiz4()));
+    });
+  }
+
+  void startQuiz5() {
+    setState(() {
+      Navigator.push(
+          context, new MaterialPageRoute(builder: (context) => new Quiz5()));
+    });
+  }
 
 }

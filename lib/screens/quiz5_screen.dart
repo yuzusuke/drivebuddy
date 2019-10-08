@@ -2,29 +2,31 @@ import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
 
-class DriveQuiz2{
+
+class DriveQuiz5{
   var images = [
-    "us-road", "redsignal", "911", "homeless","thanks",
+    "police", "policecar", "carsmoke", "accident","police15",
   ];
 
   var questions = [
-    "アメリカの道路はどちら側を走行する？",
-    "右折したいが赤信号だ",
-    "後ろから緊急車両が来た",
-    "停止中に横に物乞いしている人がこちらを見ている。",
-    "走行中、道を譲ってくれたからお礼のハザードは？",
+    "走行中、後ろからパトカーが追いかけてくる。どうやら自分らしい。",
+    "パトカーに止められた。どうする？",
+    "走行中、エンジンマークが点灯。どうやって走行する？",
+    "相手の車とレンタカーで事故を起こした。どうする？",
+    "制限速度より15マイルオーバーで警察に捕まった。どうなる？",
+
   ];
 
   var choices = [
-    ["右", "左", "真ん中", "どちらでも"],
-    ["一時停止して右折", "青まで待つ", "そのまま右折", "徐行しながら右折"],
-    ["左に寄る", "右に寄る", "その場で停止", "そのまま走行"],
-    ["窓を開けて何かあげる", "挨拶する", "目を合わせない", "警察を呼ぶ"],
-    ["どちらでもいい","それはダメ","もちろん点灯","３回点灯"],
+    ["そのまま走行", "左に寄せて停車", "その場で停車", "右に寄せて停車"],
+    ["自ら車外に出る","車内で待つ","逃げる","手を上げて車内で待つ"],
+    ["警察に電話", "そのまま走行", "ハザードを点灯", "助けを呼ぶ"],
+    ["示談で終わらせる", "警察を呼ぶ", "レンタカー会社に電話", "逃げる"],
+    ["署に拘束連行", "違反切符", "注意で終わる", "免許剥奪"],
   ];
 
   var correctAnswers = [
-    "右", "一時停止して右折", "右に寄る", "目を合わせない"," それはダメ",
+    "右に寄せて停車", "車内で待つ", "ハザードを点灯", "レンタカー会社に電話"," 違反切符",
   ];
 
 }
@@ -33,25 +35,25 @@ class DriveQuiz2{
 
 var finalScore= 0;
 var questionNumber = 0;
-var quiz = new DriveQuiz2();
+var quiz = new DriveQuiz5();
 
 
-class Quiz2 extends StatefulWidget{
+class Quiz5 extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
-    return new Quiz2State();
+    return new Quiz5State();
   }
 
 }
 
-class Quiz2State extends State<Quiz2>{
+class Quiz5State extends State<Quiz5>{
   @override
   Widget build(BuildContext context) {
     return new WillPopScope(
         onWillPop: ()async => false,
         child: Scaffold(
           appBar: new AppBar(
-            title: new Text("Quiz 2 走行編＜初級＞"),
+            title: new Text("Quiz 5 トラブル編＜初級＞"),
             backgroundColor: Colors.indigoAccent,
           ),
 
@@ -68,7 +70,8 @@ class Quiz2State extends State<Quiz2>{
                   child: new Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      AutoSizeText("Question ${questionNumber + 1} of ${quiz.questions.length}",
+
+                      new Text("Question ${questionNumber + 1} of ${quiz.questions.length}",
                         style: new TextStyle(
                             fontSize: 20.0
                         ),),
@@ -258,14 +261,15 @@ class Quiz2State extends State<Quiz2>{
 
 }
 
-class Summary extends StatelessWidget{
+class Summary extends StatelessWidget {
   final int score;
-  Summary({Key key, @required this.score}) : super(key : key);
+
+  Summary({Key key, @required this.score}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return new WillPopScope(
-      onWillPop: ()async => false,
+      onWillPop: () async => false,
       child: Scaffold(
 
           body: new Container(
@@ -285,7 +289,7 @@ class Summary extends StatelessWidget{
                     color: Colors.red,
                     shape: RoundedRectangleBorder(
                       borderRadius: new BorderRadius.circular(10.0),),
-                    onPressed: (){
+                    onPressed: () {
                       questionNumber = 0;
                       finalScore = 0;
                       Navigator.pop(context);
@@ -302,7 +306,7 @@ class Summary extends StatelessWidget{
                     color: Colors.lightBlue,
                     shape: RoundedRectangleBorder(
                       borderRadius: new BorderRadius.circular(10.0),),
-                    onPressed: (){
+                    onPressed: () {
                       Navigator.popUntil(context, ModalRoute.withName("/a"));
                     },
                     child: new Text("一覧に戻る",
@@ -311,7 +315,7 @@ class Summary extends StatelessWidget{
                           color: Colors.white
                       ),))
 
-              ],// Column
+              ], // Column
             ),
           )
 
