@@ -14,15 +14,15 @@ class FirstView extends StatelessWidget {
 
     return Scaffold(
       body: Container(
-//        decoration: BoxDecoration(
-//          image: DecorationImage(
-//            image: AssetImage("images/mainroad.jpg"),
-//            fit: BoxFit.cover,
-//          )
-//        ),
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("images/mainroad.jpg"),
+            fit: BoxFit.cover,
+          )
+        ),
         width: _width,
         height: _height,
-        color: primaryColor,
+//        color: primaryColor,
         child: SafeArea(
           child: Padding(
             padding: const EdgeInsets.all(10.0),
