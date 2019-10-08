@@ -89,13 +89,13 @@ class _SignUpViewState extends State<SignUpView> {
     return Scaffold(
 
       body: Container(
-        decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("images/mainroad.jpg"),
-              fit: BoxFit.cover,
-            )
-        ),
-//        color: primaryColor,
+//        decoration: BoxDecoration(
+//            image: DecorationImage(
+//              image: AssetImage("images/mainroad.jpg"),
+//              fit: BoxFit.cover,
+//            )
+//        ),
+        color: primaryColor,
         height: _height,
         width: _width,
         child: SafeArea(

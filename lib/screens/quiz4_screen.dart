@@ -5,7 +5,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 
 class DriveQuiz4{
   var images = [
-    "carlate", "freeway", "carpool", "freewayexit","express",
+    "carlate", "freeway", "carpool", "freewayexit", "express",
   ];
 
   var questions = [
@@ -21,11 +21,11 @@ class DriveQuiz4{
     ["左側", "右側", "両サイド", "ない"],
     ["高額納税車両", "妊婦", "２人以上乗車", "３０歳以上"],
     ["左側", "右側", "左右同時にある", "左右交互にある"],
-    ["緊急車両用","有料道路用","乗用車専用","トラック専用"],
+    ["緊急車両用", "有料道路用", "乗用車専用", "トラック専用"],
   ];
 
   var correctAnswers = [
-    "右の車線に移動", "左側", "２人以上乗車", "右側"," 有料道路用",
+    "右の車線に移動", "左側", "２人以上乗車", "右側", "有料道路用",
   ];
 
 }

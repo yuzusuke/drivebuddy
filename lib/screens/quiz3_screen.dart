@@ -5,7 +5,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 
 class DriveQuiz3{
   var images = [
-    "stealing", "panic", "beer", "parking","key",
+    "stealing", "panic", "beer", "parking", "key",
   ];
 
   var questions = [
@@ -21,11 +21,11 @@ class DriveQuiz3{
     ["道を譲る時", "徐行", "Thanks", "緊急事態"],
     ["何もない", "横取りされる", "違反切符", "注意される"],
     ["バックで駐車", "頭から駐車", "どちらでも", "縦列駐車"],
-    ["自力で探す","人に聞く","鍵ボタンを二度押す","助けを呼ぶ"],
+    ["自力で探す", "人に聞く", "鍵ボタンを二度押す", "助けを呼ぶ"],
   ];
 
   var correctAnswers = [
-    "左上", "緊急事態", "違反切符", "頭から駐車"," 鍵ボタンを二度押す",
+    "左上", "緊急事態", "違反切符", "頭から駐車", "鍵ボタンを二度押す",
   ];
 
 }
