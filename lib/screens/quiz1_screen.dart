@@ -304,6 +304,8 @@ class Summary extends StatelessWidget {
                       borderRadius: new BorderRadius.circular(10.0),
                     ),
                     onPressed: (){
+                      questionNumber = 0;
+                      finalScore = 0;
                       Navigator.of(context).pushNamed("/quizmenu");
                     },
                     child: new Text(

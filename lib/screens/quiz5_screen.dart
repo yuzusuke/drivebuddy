@@ -307,6 +307,8 @@ class Summary extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: new BorderRadius.circular(10.0),),
                     onPressed: (){
+                      questionNumber = 0;
+                      finalScore = 0;
                       Navigator.of(context).pushNamed("/quizmenu");
                     },
                     child: new Text("一覧に戻る",
