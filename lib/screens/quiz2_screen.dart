@@ -312,6 +312,7 @@ class Summary extends StatelessWidget{
                           fontSize: 20.0,
                           color: Colors.white
                       ),)),
+                new Padding(padding: EdgeInsets.all(10.0)),
                 new MaterialButton(
                     color: Colors.indigoAccent,
                     shape: RoundedRectangleBorder(
