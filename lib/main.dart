@@ -23,6 +23,8 @@ class MyApp extends StatelessWidget {
           '/signIn': (BuildContext context) => SignUpView(authFormType: AuthFormType.signIn),
           '/home': (BuildContext context) => HomeController(),
           '/quizmenu': (BuildContext context) => DriveQuizMenu(),
+          '/mainmenu': (BuildContext context) => HomeScreen(),
+
         },
       ),
     );

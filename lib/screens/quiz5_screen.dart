@@ -253,10 +253,7 @@ class Quiz5State extends State<Quiz5>{
       }else{
         questionNumber++;
       }
-
-
     });
-
   }
 
 }
@@ -315,7 +312,21 @@ class Summary extends StatelessWidget {
                       style: new TextStyle(
                           fontSize: 20.0,
                           color: Colors.white
-                      ),))
+                      ),)),
+                new MaterialButton(
+                    color: Colors.indigoAccent,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: new BorderRadius.circular(10.0),
+                    ),
+                    onPressed: (){
+                      questionNumber = 0;
+                      finalScore = 0;
+                      Navigator.of(context).pushNamed("/mainmenu");
+                    },
+                    child: new Text(
+                      "ホームに戻る",
+                      style: new TextStyle(fontSize: 20.0, color: Colors.white),
+                    )),
 
               ], // Column
             ),
